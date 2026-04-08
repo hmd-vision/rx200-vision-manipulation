@@ -1,17 +1,17 @@
-# RX200 Vision-Based Manipulation (ROS2 + MoveIt)
+# 🤖 RX200 Vision-Based Manipulation (ROS2 + MoveIt)
 
 This project implements a vision-based manipulation pipeline for the ReactorX-200 robotic arm using ROS2 and MoveIt.
 
 The system detects colored cubes using a camera and performs autonomous pick-and-place operations. The robot identifies objects in the workspace and executes motion planning to stack them.
 
 ---
-## Robot Model
+## 🦾 Robot Model
 
 ![Robot Arm](images/rx200_vision.png)
 
 ---
 
-## 📌 Features
+## ✨ Features
 
 - 🎯 Vision-based cube detection (red, yellow, blue)
 - 📷 Real-time camera processing
