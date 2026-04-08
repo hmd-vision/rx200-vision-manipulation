@@ -156,8 +156,8 @@ rx200-vision-manipulation/
 
 ## 📌 Notes
 
--Use robot_type:=fake for simulation
--Ensure camera is properly calibrated
--Run each node in a separate terminal
+- Use robot_type:=fake for simulation
+- Ensure camera is properly calibrated
+- Run each node in a separate terminal
 
 ---
