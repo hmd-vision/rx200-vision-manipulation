@@ -89,7 +89,7 @@ source install/setup.bash
 
 ---
 
-## How to Run (Real Robot)
+## ▶️ How to Run (Real Robot)
 
 The system requires three terminals running in parallel.
 
