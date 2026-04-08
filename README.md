@@ -1,0 +1,134 @@
+# RX200 Vision-Based Manipulation (ROS2 + MoveIt)
+
+This project implements a vision-based manipulation pipeline for the ReactorX-200 robotic arm using ROS2 and MoveIt.
+
+The system detects colored cubes using a camera and performs autonomous pick-and-place operations. The robot identifies objects in the workspace and executes motion planning to stack them.
+
+---
+## Robot Model
+
+![Robot Arm](images/rx200_vision.png)
+
+---
+
+
+## Features
+
+- Color-based cube detection using camera input
+- 3D position estimation of detected objects
+- Integration with MoveIt for motion planning
+- Autonomous pick-and-place execution
+- Works in both simulation and real robot setup
+
+---
+
+## System Overview
+
+The system consists of three main components:
+
+- **Vision Node**
+  - Detects colored cubes (red, blue, yellow)
+  - Computes object positions relative to the robot
+
+- **Action Client**
+  - Receives target positions
+  - Plans and executes motion using MoveIt
+
+- **GUI (optional)**
+  - Allows manual interaction/testing
+
+---
+
+## Cube Detection Results
+
+Examples of cube detection using the camera:
+
+![Detection 1](images/camera_cube_detection_1.png)
+![Detection 2](images/camera_cube_detection_2.png)
+
+---
+
+## Motion Planning (RViz)
+
+The detected targets are visualized and executed using MoveIt in RViz:
+
+![RViz](images/rviz_vision_detection.png)
+
+---
+
+## Real Robot Execution
+
+The system running on the real RX200 robotic arm:
+
+![Robot](images/real_robot_setup.png)
+
+---
+
+## Requirements
+
+- ROS2 (Humble)
+- MoveIt2
+- Interbotix ROS packages
+- Python 3
+- OpenCV
+- NumPy
+
+---
+
+## Installation
+
+Clone the repository and build the workspace:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/rx200-vision-manipulation.git
+cd rx200-vision-manipulation
+colcon build
+source install/setup.bash
+
+```
+
+---
+
+## How to Run (Real Robot)
+
+The system requires three terminals running in parallel.
+
+### Terminal 1 — Connect to Robot (MoveIt)
+
+```bash
+cd interbotix_ws/
+colcon build
+source install/setup.bash
+ros2 launch interbotix_xsarm_moveit xsarm_moveit.launch.py robot_model:=rx200 hardware_type:=actual
+```
+
+This launches the MoveIt interface and connects to the real RX200 robot.
+
+---
+
+### Terminal 2 — Run Vision Node
+
+```bash
+colcon build
+source install/setup.bash
+ros2 run rx200_moveit_control vision
+```
+
+This starts the vision pipeline for cube detection.
+
+---
+
+### Terminal 3 — Run GUI
+
+```bash
+source install/setup.bash
+ros2 run rx200_moveit_control keyboard_gui
+```
+
+This launches the GUI used to control and trigger manipulation.
+
+---
+
+**Note:**  
+Make sure Terminal 1 (robot connection) is running before starting the vision node and GUI.
+
