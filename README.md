@@ -22,24 +22,26 @@ The system detects colored cubes using a camera and performs autonomous pick-and
 
 ---
 
-## System Overview
+## 🧠 System Overview
 
 The system consists of three main components:
 
-- **Vision Node**
-  - Detects colored cubes (red, blue, yellow)
-  - Computes object positions relative to the robot
+### 1. Vision Node
+- Detects colored cubes from camera input
+- Computes object positions
 
-- **Action Client**
-  - Receives target positions
-  - Plans and executes motion using MoveIt
+### 2. GUI Publisher
+- Allows user interaction via keyboard GUI
+- Sends target coordinates
 
-- **GUI (optional)**
-  - Allows manual interaction/testing
-
+### 3. MoveIt Action Client
+- Receives target positions
+- Plans and executes robot motion
 ---
 
-## Cube Detection Results
+## 📸 Results
+
+### 🧪 Cube Detection (Camera View)
 
 Examples of cube detection using the camera:
 
@@ -48,7 +50,7 @@ Examples of cube detection using the camera:
 
 ---
 
-## Motion Planning (RViz)
+### 🖥️ RViz Visualization
 
 The detected targets are visualized and executed using MoveIt in RViz:
 
@@ -56,7 +58,7 @@ The detected targets are visualized and executed using MoveIt in RViz:
 
 ---
 
-## Real Robot Execution
+### 🤖 Real Robot Setup
 
 The system running on the real RX200 robotic arm:
 
@@ -64,18 +66,16 @@ The system running on the real RX200 robotic arm:
 
 ---
 
-## Requirements
+## ⚙️ Requirements
 
-- ROS2 (Humble)
+- ROS2 Humble
 - MoveIt2
-- Interbotix ROS packages
 - Python 3
-- OpenCV
-- NumPy
+- Interbotix XSArm packages
 
 ---
 
-## Installation
+## 🚀 Installation
 
 Clone the repository and build the workspace:
 
@@ -132,8 +132,11 @@ This launches the GUI used to control and trigger manipulation.
 **Note:**  
 Make sure Terminal 1 (robot connection) is running before starting the vision node and GUI.
 
-## 📂 Project Structure
+--- 
 
+
+## 📂 Project Structure
+```
 rx200-vision-manipulation/
 │── src/
 │ ├── rx200_moveit_control/
@@ -147,3 +150,14 @@ rx200-vision-manipulation/
 │── requirements.txt
 │── .gitignore
 │── demo_pick_place.mp4
+```
+
+--- 
+
+## 📌 Notes
+
+-Use robot_type:=fake for simulation
+-Ensure camera is properly calibrated
+-Run each node in a separate terminal
+
+---
