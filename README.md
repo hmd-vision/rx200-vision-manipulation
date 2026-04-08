@@ -11,14 +11,14 @@ The system detects colored cubes using a camera and performs autonomous pick-and
 
 ---
 
+## 📌 Features
 
-## Features
-
-- Color-based cube detection using camera input
-- 3D position estimation of detected objects
-- Integration with MoveIt for motion planning
-- Autonomous pick-and-place execution
-- Works in both simulation and real robot setup
+- 🎯 Vision-based cube detection (red, yellow, blue)
+- 📷 Real-time camera processing
+- 🤖 Autonomous pick-and-place execution
+- 🧠 Integration with MoveIt2 for motion planning
+- 🖥️ GUI-based control for manual interaction
+- 🔄 Works in simulation and real robot setup
 
 ---
 
@@ -132,3 +132,18 @@ This launches the GUI used to control and trigger manipulation.
 **Note:**  
 Make sure Terminal 1 (robot connection) is running before starting the vision node and GUI.
 
+## 📂 Project Structure
+
+rx200-vision-manipulation/
+│── src/
+│ ├── rx200_moveit_control/
+│ │ ├── gui_publisher.py
+│ │ ├── vision_subscriber.py
+│ │ ├── rx200_moveit_action_client.py
+│ ├── rx200_xsarm_descriptions/
+│
+│── images/
+│── README.md
+│── requirements.txt
+│── .gitignore
+│── demo_pick_place.mp4
